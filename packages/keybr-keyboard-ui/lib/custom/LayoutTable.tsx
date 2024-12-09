@@ -25,6 +25,9 @@ export function LayoutTable() {
             <th className={styles.characterCol}>
               <ModifierInfo modifier={KeyModifier.ShiftAlt} />
             </th>
+            <th className={styles.characterCol}>
+              <ModifierInfo modifier={KeyModifier.Ctrl} />
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +48,9 @@ export function LayoutTable() {
                 </td>
                 <td className={styles.characterCol}>
                   <CharacterInfo character={d} />
+                </td>
+                <td className={styles.characterCol}>
+                  <CharacterInfo character={c} />
                 </td>
               </tr>
             );

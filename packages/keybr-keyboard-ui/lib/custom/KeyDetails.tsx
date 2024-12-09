@@ -60,6 +60,28 @@ export function KeyDetails({
           </Value>
         </Field>
       </FieldList>
+      <FieldList>
+        <Field size={6}>
+          <Name>
+            <ModifierInfo modifier={KeyModifier.Ctrl} />
+          </Name>
+        </Field>
+        <Field size={10}>
+          <Value>
+            <CharacterInfo character={c} />
+          </Value>
+        </Field>
+        <Field size={6}>
+          <Name>
+            <ModifierInfo modifier={KeyModifier.Tab} />
+          </Name>
+        </Field>
+        <Field size={10}>
+          <Value>
+            <CharacterInfo character={d} />
+          </Value>
+        </Field>
+      </FieldList>
     </>
   );
 }

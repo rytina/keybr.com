@@ -10,6 +10,10 @@ export function ModifierInfo({ modifier }: { readonly modifier: KeyModifier }) {
       return <span>AltGr</span>;
     case KeyModifier.ShiftAlt:
       return <span>Shift AltGr</span>;
+    case KeyModifier.Ctrl:
+      return <span>Ctrl</span>;
+    case KeyModifier.Tab:
+      return <span>Tab</span>;
   }
   return null;
 }
