@@ -16,6 +16,8 @@ export function LiveImport({
     code: string;
     shift: boolean;
     alt: boolean;
+    ctrl: boolean;
+    tab: boolean;
   } | null>(null);
   return (
     <FieldList>
@@ -34,7 +36,9 @@ export function LiveImport({
               const alt =
                 event.getModifierState("Alt") ||
                 event.getModifierState("AltGraph");
-              ref.current = { code, shift, alt };
+              const ctrl = event.getModifierState("Control");
+              const tab = event.getModifierState("Tab");
+              ref.current = { code, shift, alt, ctrl, tab };
             } else {
               ref.current = null;
             }
@@ -47,8 +51,8 @@ export function LiveImport({
               event.inputType === "insertText" &&
               event.data
             ) {
-              const { code, shift, alt } = lastKey;
-              const modifier = KeyModifier.from(shift, alt);
+              const { code, shift, alt, ctrl, tab } = lastKey;
+              const modifier = KeyModifier.from(shift, alt, ctrl, tab);
               const codePoint = event.data.codePointAt(0) ?? 0x0000;
               setLayout(layout.setOne(code, modifier, codePoint));
               setInputData({ key: code, codePoint, modifier });
